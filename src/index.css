@@ -7,4 +7,33 @@
 @theme {
   --font-primary: "Poppins", sans-serif; 
   --font-secondary: "Inter", sans-serif;
+
+  --color-primary: #DB4444;
+}
+
+
+.slick-dots {
+
+    bottom: 30px !important;
+}
+
+.slick-dots li button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white !important;
+}
+
+.slick-dots li.slick-active button:before {
+    width: -20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid white;
+}
+
+.slick-dots li button:before {
+
+    color: transparent !important;
+
 }
