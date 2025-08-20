@@ -6,6 +6,8 @@ import Categories from '../components/Categories/Categories'
 import BestSellingProducts from '../components/BestSellingProducts/BestSellingProducts'
 import Offer from '../components/Offer/Offer'
 import ExploreOurProducts from '../components/ExploreOurProducts/ExploreOurProducts'
+import NewArrival from '../components/NewArrival/NewArrival'
+import Services from '../components/Services/Services'
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
      <BestSellingProducts/>
      <Offer/>
      <ExploreOurProducts/>
+     <NewArrival/>
+     <Services/>
     </>
   )
 }

@@ -130,7 +130,7 @@ const productData = [
                 productData.slice(0, visible).map((product)=>(
 
                     <div>
-              <div className='w-[270px] relative rounded flex flex-col justify-center items-center py-[52px] px-[65px] bg-[#F5F5F5]'>
+              <div className='w-[270px] group relative rounded flex flex-col justify-center items-center py-[52px] px-[65px] bg-[#F5F5F5]'>
                 <div className='absolute top-3 right-3'>
                   <div className='w-[34px] h-[34px] flex justify-center items-center  rounded-full bg-white'>
                     <CiHeart className='' size={24} />
@@ -139,11 +139,14 @@ const productData = [
                     <FiEye className='' size={24} />
                   </div>
                 </div>
-                <img src={products} alt="" />
+                <img src={product.image} alt="" />
+                <div>
+                  <button className='w-full hidden transition-all duration-300 group-hover:block text-center absolute bottom-0 left-0 py-2 font-primary font-medium text-white bg-black'>Add To Cart</button>
+                </div>
               </div>
               <div>
-                <p className='font-primary font-medium mt-4 '>fwee</p>
-                <h3 className='font-primary font-medium mt-2 text-primary'>fdfs <del className='text-black/50 font-primary font-medium ml-2'>$360</del></h3>
+                <p className='font-primary font-medium mt-4 '>{product.name}</p>
+                <h3 className='font-primary font-medium mt-2 text-primary'>{product.price} <del className='text-black/50 font-primary font-medium ml-2'>$360</del></h3>
                 <div className='flex items-center mt-2 gap-x-1'>
                   <div className='flex'>
                     <FaStar className='text-[#FFAD33]' />
