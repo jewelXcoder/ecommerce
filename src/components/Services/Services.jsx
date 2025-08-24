@@ -11,21 +11,21 @@ const Services = () => {
       <div className=' flex justify-center gap-x-[88px] items-center'>
              <div className='w-[249px]'>
       <div className='w-[58px] m-auto h-[58px] flex justify-center items-center rounded-full border-[11px] border-[#c1c0c1] bg-black'>
-        <img className='' src={service1} alt="" />
+        <img className='py-2 px-2' src={service1} sizes='20' alt="" />
       </div>
       <h3 className='font-primary font-semibold text-[20px] mt-[24px]'>FREE AND FAST DELIVERY</h3>
       <p className='font-primary text-[14px] mt-2'>Free delivery for all orders over $140</p>
     </div>
          <div className='w-[249px]'>
       <div className='w-[58px] m-auto h-[58px] flex justify-center items-center rounded-full border-[11px] border-[#c1c0c1] bg-black'>
-        <img className='' src={service2} alt="" />
+        <img className='py-2 px-2' src={service2} sizes='20' alt="" />
       </div>
       <h3 className='font-primary font-semibold text-[20px] mt-[24px]'>FREE AND FAST DELIVERY</h3>
       <p className='font-primary text-[14px] mt-2'>Free delivery for all orders over $140</p>
     </div>
          <div className='w-[249px]'>
       <div className='w-[58px] m-auto h-[58px] flex justify-center items-center rounded-full border-[11px] border-[#c1c0c1] bg-black'>
-        <img className='' src={service3} alt="" />
+        <img className='py-2 px-2' src={service3} sizes='20' alt="" />
       </div>
       <h3 className='font-primary font-semibold text-[20px] mt-[24px]'>FREE AND FAST DELIVERY</h3>
       <p className='font-primary text-[14px] mt-2'>Free delivery for all orders over $140</p>

@@ -8,12 +8,11 @@ import Offer from '../components/Offer/Offer'
 import ExploreOurProducts from '../components/ExploreOurProducts/ExploreOurProducts'
 import NewArrival from '../components/NewArrival/NewArrival'
 import Services from '../components/Services/Services'
+import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   return (
-    <>
-     <Header/>
-     <Navbar/> 
+    <> 
      <Banner/>
      <Categories/>
      <BestSellingProducts/>
