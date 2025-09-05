@@ -8,6 +8,9 @@ import ProductRating from './ProductRating'
 const ProductRightPart = () => {
 
   const [productData, setProductData] = useState([])
+  const [currentPage, setCurrentPage] = useState (1)
+
+  const productPerPage = 6;
 
   useEffect(() => {
 
@@ -17,7 +20,19 @@ const ProductRightPart = () => {
 
   }, [])
 
-  console.log(productData)
+  // console.log(productData.length)
+
+  const totalProducts = productData.length
+  const totalPages = Math.ceil(totalProducts / productPerPage)
+
+  const data = [...Array(totalPages).keys()].map((index) => index + 1);
+  const indexOfLastProduct = currentPage * productPerPage
+  const indexOfFirstProduct = indexOfLastProduct - productPerPage
+
+  const currentProduct = productData.slice(indexOfFirstProduct, indexOfLastProduct)
+  
+
+  // console.log(productData)
 
 
   // const productData = [
@@ -34,7 +49,7 @@ const ProductRightPart = () => {
     <div>
       <div className='mt-[60px] flex flex-wrap gap-x-[30px] items-center'>
         {
-          productData.map((product) => (
+          currentProduct.map((product) => (
 
             <div className='mb-6'>
               <div className='w-[270px] group relative rounded flex flex-col justify-center items-center py-[52px] px-[65px] bg-[#F5F5F5]'>
@@ -69,9 +84,20 @@ const ProductRightPart = () => {
                 </div>
               </div>
             </div>
-
+          
           ))
         }
+
+        <div className='flex gap-x-2'>
+          {
+            data.map((item)=>(
+              <div
+              onClick={()=> setCurrentPage(item)}
+              className={`py-2 cursor-pointer px-4 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
+              >{item}</div>
+            ))
+          }
+        </div>
       </div>
     </div>
   )
