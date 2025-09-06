@@ -5,10 +5,11 @@ import { CiHeart } from 'react-icons/ci'
 import ProductRating from './ProductRating'
 import { Link } from 'react-router'
 
+
 const ProductRightPart = () => {
 
   const [productData, setProductData] = useState([])
-  const [currentPage, setCurrentPage] = useState (1)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const productPerPage = 6 ;
 
@@ -22,21 +23,15 @@ const ProductRightPart = () => {
 
   // console.log(productData)
 
-  // console.log(productData.length)
-
-
-
-  const totalProducts = productData.length
-  const totalPages = Math.ceil(totalProducts / productPerPage)
+  const totalProduct = productData.length
+  const totalPages = Math.ceil(totalProduct / productPerPage)
   const indexOfLastProduct = currentPage * productPerPage
   const indexOfFirstProduct = indexOfLastProduct - productPerPage
 
   const currentProduct = productData.slice(indexOfFirstProduct, indexOfLastProduct)
 
- const data = [...Array(totalPages).keys()].map((index)=> index + 1)
 
-
-  
+ const data = [...Array(totalPages).keys()].map((index)=> index + 1) 
 
   // const productData = [
 
@@ -70,7 +65,7 @@ const ProductRightPart = () => {
                 </div>
               </Link>
               <div>
-                <p className='font-primary text-[10px] mt-4 '>{product.title}</p>
+                <p className='font-primary text-[12px] mt-4 '>{product.title}</p>
                 <h3 className='font-primary font-medium mt-2 text-primary'>{product.price} <del className='text-black/50 font-primary font-medium ml-2'>$360</del></h3>
                 <div className='flex items-center mt-2 gap-x-1'>
                   {/* <div className='flex'>
@@ -95,7 +90,7 @@ const ProductRightPart = () => {
             data.map((item)=>(
               <div
               onClick={()=> setCurrentPage(item)}
-              className={`cursor-pointer py-2 px-5 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
+              className={`cursor-pointer py-2 px-4 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
               >{item}</div>
             ))
           }

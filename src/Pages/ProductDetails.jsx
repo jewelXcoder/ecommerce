@@ -3,8 +3,8 @@ import SingleProductDetail from '../components/SingleProductDetail/SingleProduct
 
 const ProductDetails = () => {
   return (
-    <div className='py-30'>
-      <SingleProductDetail/>
+    <div>
+    <SingleProductDetail/>  
     </div>
   )
 }
