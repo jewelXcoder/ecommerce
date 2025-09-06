@@ -3,14 +3,14 @@ import { FaStar } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { CiHeart } from 'react-icons/ci'
 import ProductRating from './ProductRating'
-
+import { Link } from 'react-router'
 
 const ProductRightPart = () => {
 
   const [productData, setProductData] = useState([])
   const [currentPage, setCurrentPage] = useState (1)
 
-  const productPerPage = 6;
+  const productPerPage = 6 ;
 
   useEffect(() => {
 
@@ -20,20 +20,23 @@ const ProductRightPart = () => {
 
   }, [])
 
+  // console.log(productData)
+
   // console.log(productData.length)
+
+
 
   const totalProducts = productData.length
   const totalPages = Math.ceil(totalProducts / productPerPage)
-
-  const data = [...Array(totalPages).keys()].map((index) => index + 1);
   const indexOfLastProduct = currentPage * productPerPage
   const indexOfFirstProduct = indexOfLastProduct - productPerPage
 
   const currentProduct = productData.slice(indexOfFirstProduct, indexOfLastProduct)
+
+ const data = [...Array(totalPages).keys()].map((index)=> index + 1)
+
+
   
-
-  // console.log(productData)
-
 
   // const productData = [
 
@@ -52,7 +55,7 @@ const ProductRightPart = () => {
           currentProduct.map((product) => (
 
             <div className='mb-6'>
-              <div className='w-[270px] group relative rounded flex flex-col justify-center items-center py-[52px] px-[65px] bg-[#F5F5F5]'>
+              <Link to={`/product/${product.id}`} className='w-[270px] group relative rounded flex flex-col justify-center items-center py-[52px] px-[65px] bg-[#F5F5F5]'>
                 <div className='absolute top-3 right-3'>
                   <div className='w-[34px] h-[34px] flex justify-center items-center  rounded-full bg-white'>
                     <CiHeart className='' size={24} />
@@ -65,9 +68,9 @@ const ProductRightPart = () => {
                 <div>
                   <button className='w-full hidden transition-all duration-300 group-hover:block text-center absolute bottom-0 left-0 py-2 font-primary font-medium text-white bg-black'>Add To Cart</button>
                 </div>
-              </div>
+              </Link>
               <div>
-                <p className='font-primary font-medium mt-4 '>The north coat</p>
+                <p className='font-primary text-[10px] mt-4 '>{product.title}</p>
                 <h3 className='font-primary font-medium mt-2 text-primary'>{product.price} <del className='text-black/50 font-primary font-medium ml-2'>$360</del></h3>
                 <div className='flex items-center mt-2 gap-x-1'>
                   {/* <div className='flex'>
@@ -84,16 +87,15 @@ const ProductRightPart = () => {
                 </div>
               </div>
             </div>
-          
+
           ))
         }
-
-        <div className='flex gap-x-2'>
+        <div className='flex gap-x-3'>
           {
             data.map((item)=>(
               <div
               onClick={()=> setCurrentPage(item)}
-              className={`py-2 cursor-pointer px-4 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
+              className={`cursor-pointer py-2 px-5 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
               >{item}</div>
             ))
           }
