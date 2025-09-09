@@ -13,7 +13,7 @@ const Cart = () => {
             <div className='w-[25%]'>Product</div>
             <div className='w-[25%]'>Price</div>
             <div className='w-[25%]'>Quantity</div>
-            <div className='w-[25%] '>Subtotal</div>
+            <div className='w-[25%] flex justify-end'>Subtotal</div>
           </div>
           <div className='flex justify-between items-center py-6 px-[40px] rounded shadow-[0_1px_13px_rgba(0,0,0,0.1)] '>
             <div className='w-[25%]'>
@@ -32,7 +32,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className='w-[25%]'>$650</div>
+            <div className='w-[25%] flex justify-end'>$650</div>
           </div>
           <div className='flex justify-between items-center py-6 px-[40px] rounded shadow-[0_1px_13px_rgba(0,0,0,0.1)] '>
             <div className='w-[25%]'>
@@ -41,7 +41,7 @@ const Cart = () => {
                 <p className='ml-5'>Gamepad</p>
               </div>
             </div>
-            <div className='w-[25%]'>$650</div>
+            <div className='w-[25%] '>$650</div>
             <div className='w-[25%]'>
               <div className='flex items-center gap-x-4 px-3 py-[6px] rounded border border-black/50 h-[44px] w-[72px]'>
                 01
@@ -51,7 +51,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className='w-[25%]'>$650</div>
+            <div className='w-[25%] flex justify-end'>$650</div>
           </div>
         </div>
         <div className='flex justify-between items-center mt-4'>
