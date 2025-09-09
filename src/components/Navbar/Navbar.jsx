@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaOpencart } from "react-icons/fa";
 import Container from '../Layout/Container';
 import { Link } from 'react-router';
+import { BiUser } from "react-icons/bi";
 
 const Navbar = () => {
   return (
@@ -29,7 +30,10 @@ const Navbar = () => {
           <CiSearch className='absolute right-[12px]' size={20}/>
           </div>
           <CiHeart size={20}/>
+          <Link to="/cart">          
           <FaOpencart size={20}/>
+          </Link>
+          <BiUser size={20}/>
         </div>
         </div>
       </Container>
