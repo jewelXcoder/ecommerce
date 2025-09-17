@@ -11,7 +11,7 @@ const ProductRightPart = () => {
   const [productData, setProductData] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
 
-  const productPerPage = 6 ;
+  const productPerPage = 6;
 
   useEffect(() => {
 
@@ -31,7 +31,7 @@ const ProductRightPart = () => {
   const currentProduct = productData.slice(indexOfFirstProduct, indexOfLastProduct)
 
 
- const data = [...Array(totalPages).keys()].map((index)=> index + 1) 
+  const data = [...Array(totalPages).keys()].map((index) => index + 1)
 
   // const productData = [
 
@@ -87,10 +87,10 @@ const ProductRightPart = () => {
         }
         <div className='flex gap-x-3'>
           {
-            data.map((item)=>(
+            data.map((item) => (
               <div
-              onClick={()=> setCurrentPage(item)}
-              className={`cursor-pointer py-2 px-4 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
+                onClick={() => setCurrentPage(item)}
+                className={`cursor-pointer py-2 px-4 rounded ${currentPage === item ? "bg-black text-white" : "bg-gray-400 text-black"}`}
               >{item}</div>
             ))
           }
